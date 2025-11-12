@@ -48,7 +48,7 @@ const TracksSection = () => {
   return (
     <section id="tracks" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             Two Paths. One Goal — Build What Matters
           </h2>
@@ -61,7 +61,8 @@ const TracksSection = () => {
           {tracks.map((track, index) => (
             <Card
               key={index}
-              className="relative overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              className="relative overflow-hidden hover:shadow-xl hover-lift animate-fade-in group"
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
               {/* Gradient overlay */}
               <div
@@ -69,7 +70,7 @@ const TracksSection = () => {
               />
 
               <CardHeader className="space-y-4">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/20">
                   <track.icon className="w-8 h-8 text-primary" />
                 </div>
                 <CardTitle className="text-2xl">{track.title}</CardTitle>

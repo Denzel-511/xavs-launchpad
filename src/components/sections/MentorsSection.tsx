@@ -25,7 +25,7 @@ const MentorsSection = () => {
   return (
     <section id="mentors" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             Learn from Practitioners, Not Professors
           </h2>
@@ -38,13 +38,14 @@ const MentorsSection = () => {
           {mentors.map((mentor, index) => (
             <Card
               key={index}
-              className="overflow-hidden hover:shadow-xl transition-all duration-300"
+              className="overflow-hidden hover:shadow-xl hover-lift animate-fade-in group"
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div className="aspect-square overflow-hidden bg-muted">
                 <img
                   src={mentor.image}
                   alt={mentor.name}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <CardContent className="p-6 space-y-4">
@@ -70,12 +71,12 @@ const MentorsSection = () => {
           ))}
         </div>
 
-        <Card className="max-w-3xl mx-auto p-8 bg-muted/30 border-2 border-dashed">
+        <Card className="max-w-3xl mx-auto p-8 bg-muted/30 border-2 border-dashed animate-fade-in" style={{ animationDelay: "0.3s" }}>
           <div className="text-center space-y-4">
             <p className="text-lg text-muted-foreground">
               Additional mentors and guest speakers to be announced
             </p>
-            <Button variant="outline">Want to mentor? Contact us →</Button>
+            <Button variant="outline" className="hover:scale-105 transition-transform">Want to mentor? Contact us →</Button>
           </div>
         </Card>
       </div>

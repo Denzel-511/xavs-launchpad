@@ -72,7 +72,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 space-y-4 border-t border-border">
+          <div className="md:hidden py-4 space-y-4 border-t border-border animate-slide-in">
             <button
               onClick={() => scrollToSection("tracks")}
               className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"

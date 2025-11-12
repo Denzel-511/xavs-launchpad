@@ -26,9 +26,9 @@ const ProblemSection = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-muted/30">
+    <section id="problem" className="py-16 md:py-24 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-12">
+        <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             The Tech Skills Gap in Africa is Real — We're Closing It
           </h2>
@@ -38,8 +38,8 @@ const ProblemSection = () => {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto mb-12">
-          <Card className="p-8 bg-card shadow-md">
+        <div className="max-w-3xl mx-auto mb-12 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <Card className="p-8 bg-card shadow-md hover-lift">
             <p className="text-lg leading-relaxed">
               We created <span className="font-bold text-primary">XAVS Launchpad</span> to fix that.
               We turn theory into experience through structured, project-based learning — 
@@ -52,9 +52,10 @@ const ProblemSection = () => {
           {stats.map((stat, index) => (
             <Card
               key={index}
-              className="p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              className="p-6 text-center hover-lift animate-fade-in"
+              style={{ animationDelay: `${0.2 + index * 0.1}s` }}
             >
-              <div className="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-lg bg-primary/10">
+              <div className="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-lg bg-primary/10 transition-transform hover:scale-110 duration-300">
                 <stat.icon className="w-6 h-6 text-primary" />
               </div>
               <div className="text-3xl font-bold mb-2">{stat.value}</div>

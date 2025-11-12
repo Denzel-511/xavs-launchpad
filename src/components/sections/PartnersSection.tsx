@@ -19,10 +19,10 @@ const PartnersSection = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-muted/30">
+    <section id="partners" className="py-16 md:py-24 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
               Build Solutions for Real Companies
             </h2>
@@ -32,7 +32,7 @@ const PartnersSection = () => {
             </p>
           </div>
 
-          <Card className="p-8 mb-12 bg-gradient-to-br from-primary/5 to-secondary/5">
+          <Card className="p-8 mb-12 bg-gradient-to-br from-primary/5 to-secondary/5 animate-fade-in" style={{ animationDelay: "0.1s" }}>
             <h3 className="text-xl font-bold mb-4">This Means:</h3>
             <ul className="space-y-3">
               {[
@@ -49,7 +49,7 @@ const PartnersSection = () => {
             </ul>
           </Card>
 
-          <h3 className="text-2xl font-bold text-center mb-8">
+          <h3 className="text-2xl font-bold text-center mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
             Partner Companies (Founding Cohort)
           </h3>
 
@@ -57,7 +57,8 @@ const PartnersSection = () => {
             {partners.map((partner, index) => (
               <Card
                 key={index}
-                className="p-6 hover:shadow-lg transition-all duration-300"
+                className="p-6 hover-lift animate-fade-in"
+                style={{ animationDelay: `${0.3 + index * 0.1}s` }}
               >
                 <div className="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-lg bg-primary/10">
                   <Building2 className="w-6 h-6 text-primary" />
@@ -71,13 +72,13 @@ const PartnersSection = () => {
             ))}
           </div>
 
-          <Card className="p-8 text-center bg-gradient-to-br from-secondary/10 to-primary/10">
-            <Plus className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+          <Card className="p-8 text-center bg-gradient-to-br from-secondary/10 to-primary/10 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+            <Plus className="w-12 h-12 text-muted-foreground mx-auto mb-4 transition-transform hover:rotate-90 duration-300" />
             <h4 className="text-xl font-bold mb-2">More Partners Announced Soon</h4>
             <p className="text-muted-foreground mb-6">
               If you're a company with a technical challenge, reach out to collaborate
             </p>
-            <Button variant="outline">Become a Partner →</Button>
+            <Button variant="outline" className="hover:scale-105 transition-transform">Become a Partner →</Button>
           </Card>
         </div>
       </div>

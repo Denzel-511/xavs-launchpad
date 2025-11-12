@@ -37,7 +37,7 @@ const PricingSection = () => {
   return (
     <section id="pricing" className="py-16 md:py-24 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             Invest in Your Future
           </h2>
@@ -52,9 +52,10 @@ const PricingSection = () => {
             {pricingTiers.map((tier, index) => (
               <Card
                 key={index}
-                className={`relative overflow-hidden ${
+                className={`relative overflow-hidden hover-lift animate-fade-in ${
                   tier.badge ? "border-2 border-secondary shadow-xl" : ""
                 }`}
+                style={{ animationDelay: `${index * 0.15}s` }}
               >
                 {tier.badge && (
                   <div className="absolute top-4 right-4">
@@ -87,7 +88,7 @@ const PricingSection = () => {
           </div>
 
           {/* Payment Plan */}
-          <Card className="p-8 mb-12 bg-gradient-to-br from-primary/5 to-secondary/5">
+          <Card className="p-8 mb-12 bg-gradient-to-br from-primary/5 to-secondary/5 animate-fade-in" style={{ animationDelay: "0.3s" }}>
             <div className="flex items-start gap-4">
               <Tag className="w-6 h-6 text-primary mt-1" />
               <div>
@@ -101,7 +102,7 @@ const PricingSection = () => {
           </Card>
 
           {/* What's Included */}
-          <Card className="p-8 mb-8">
+          <Card className="p-8 mb-8 animate-fade-in" style={{ animationDelay: "0.4s" }}>
             <h3 className="text-2xl font-bold mb-6 text-center">What's Included</h3>
             <div className="grid sm:grid-cols-2 gap-4">
               {included.map((item, index) => (
@@ -114,7 +115,7 @@ const PricingSection = () => {
           </Card>
 
           {/* Payment Methods */}
-          <Card className="p-8 bg-muted/50">
+          <Card className="p-8 bg-muted/50 animate-fade-in" style={{ animationDelay: "0.5s" }}>
             <h3 className="text-xl font-bold mb-4 text-center">Payment Methods</h3>
             <div className="flex flex-wrap justify-center gap-4">
               {paymentMethods.map((method, index) => (

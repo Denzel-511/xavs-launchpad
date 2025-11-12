@@ -1,23 +1,44 @@
 import { Separator } from "@/components/ui/separator";
 import { Linkedin, Twitter, Instagram, Github, Mail, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const footerSections = [
     {
       title: "XAVS Launchpad",
-      links: ["About Us", "Our Story", "Contact Us", "Blog (coming soon)"],
+      links: [
+        { text: "About Us", href: "/#problem" },
+        { text: "Our Story", href: "/#problem" },
+        { text: "Contact Us", href: "/contact" },
+        { text: "Blog (coming soon)", href: "#" },
+      ],
     },
     {
       title: "Programs",
-      links: ["Full-Stack Engineering", "AI & Automation", "Curriculum Overview", "Demo Day"],
+      links: [
+        { text: "Full-Stack Engineering", href: "/#tracks" },
+        { text: "AI & Automation", href: "/#tracks" },
+        { text: "Curriculum Overview", href: "/#how-it-works" },
+        { text: "Demo Day", href: "/#how-it-works" },
+      ],
     },
     {
       title: "Resources",
-      links: ["FAQ", "Application Process", "Student Handbook", "Capstone Partners"],
+      links: [
+        { text: "FAQ", href: "/faq" },
+        { text: "Application Process", href: "/#pricing" },
+        { text: "Student Handbook", href: "#" },
+        { text: "Capstone Partners", href: "/#partners" },
+      ],
     },
     {
       title: "Legal",
-      links: ["Terms & Conditions", "Privacy Policy", "Refund Policy", "Code of Conduct"],
+      links: [
+        { text: "Terms & Conditions", href: "/terms" },
+        { text: "Privacy Policy", href: "/privacy" },
+        { text: "Refund Policy", href: "/terms#refund" },
+        { text: "Code of Conduct", href: "/terms#conduct" },
+      ],
     },
   ];
 
@@ -64,12 +85,21 @@ const Footer = () => {
               <ul className="space-y-2">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <a
-                      href="#"
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      {link}
-                    </a>
+                    {link.href.startsWith('/') ? (
+                      <Link
+                        to={link.href}
+                        className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        {link.text}
+                      </Link>
+                    ) : (
+                      <a
+                        href={link.href}
+                        className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        {link.text}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

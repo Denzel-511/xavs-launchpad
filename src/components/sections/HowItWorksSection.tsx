@@ -36,7 +36,7 @@ const HowItWorksSection = () => {
   return (
     <section id="how-it-works" className="py-16 md:py-24 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             8 Weeks. 6 Projects. 1 Career-Changing Experience
           </h2>
@@ -54,7 +54,8 @@ const HowItWorksSection = () => {
               {timeline.map((phase, index) => (
                 <Card
                   key={index}
-                  className="relative ml-0 md:ml-20 hover:shadow-lg transition-all duration-300"
+                  className="relative ml-0 md:ml-20 hover-lift animate-fade-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {/* Icon badge */}
                   <div className="absolute -left-4 md:-left-16 top-6 w-12 h-12 rounded-full bg-background border-2 border-border flex items-center justify-center">
@@ -80,26 +81,26 @@ const HowItWorksSection = () => {
 
         {/* Learning Model */}
         <div className="mt-16 max-w-4xl mx-auto">
-          <h3 className="text-2xl font-bold text-center mb-8">Our Learning Model</h3>
+          <h3 className="text-2xl font-bold text-center mb-8 animate-fade-in" style={{ animationDelay: "0.5s" }}>Our Learning Model</h3>
           <div className="grid md:grid-cols-3 gap-6">
-            <Card className="p-6 text-center hover:shadow-lg transition-all duration-300">
-              <div className="text-4xl mb-4">🔨</div>
+            <Card className="p-6 text-center hover-lift animate-fade-in" style={{ animationDelay: "0.6s" }}>
+              <div className="text-4xl mb-4 transition-transform hover:scale-125 duration-300">🔨</div>
               <h4 className="font-bold mb-2">70% Building, 30% Learning</h4>
               <p className="text-sm text-muted-foreground">
                 You spend most of your time coding, not watching tutorials
               </p>
             </Card>
 
-            <Card className="p-6 text-center hover:shadow-lg transition-all duration-300">
-              <div className="text-4xl mb-4">👥</div>
+            <Card className="p-6 text-center hover-lift animate-fade-in" style={{ animationDelay: "0.7s" }}>
+              <div className="text-4xl mb-4 transition-transform hover:scale-125 duration-300">👥</div>
               <h4 className="font-bold mb-2">Peer Collaboration</h4>
               <p className="text-sm text-muted-foreground">
                 Work in small teams and simulate real-world software teams
               </p>
             </Card>
 
-            <Card className="p-6 text-center hover:shadow-lg transition-all duration-300">
-              <div className="text-4xl mb-4">🎯</div>
+            <Card className="p-6 text-center hover-lift animate-fade-in" style={{ animationDelay: "0.8s" }}>
+              <div className="text-4xl mb-4 transition-transform hover:scale-125 duration-300">🎯</div>
               <h4 className="font-bold mb-2">Industry-Led Mentorship</h4>
               <p className="text-sm text-muted-foreground">
                 Learn directly from engineers and professionals currently in the field

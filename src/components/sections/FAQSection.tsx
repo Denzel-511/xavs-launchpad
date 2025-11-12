@@ -62,7 +62,7 @@ const FAQSection = () => {
   return (
     <section id="faq" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             Frequently Asked Questions
           </h2>
@@ -71,13 +71,13 @@ const FAQSection = () => {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: "0.1s" }}>
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="border border-border rounded-lg px-6"
+                className="border border-border rounded-lg px-6 hover:shadow-md transition-shadow"
               >
                 <AccordionTrigger className="text-left hover:no-underline">
                   <span className="font-semibold">{faq.question}</span>
