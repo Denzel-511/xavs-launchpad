@@ -14,50 +14,59 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-lg">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-2">
-            <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              XAVS
+        <div className="flex items-center justify-between h-20">
+          <div className="flex items-center space-x-3 group cursor-pointer">
+            <div className="relative">
+              <div className="text-3xl font-bold bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+                XAVS
+              </div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
-            <span className="text-muted-foreground">Launchpad</span>
+            <span className="text-muted-foreground font-medium text-lg">Launchpad</span>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection("tracks")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="relative text-foreground hover:text-primary transition-all duration-300 font-medium group"
             >
-              Tracks
+              <span>Tracks</span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300" />
             </button>
             <button
               onClick={() => scrollToSection("how-it-works")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="relative text-foreground hover:text-primary transition-all duration-300 font-medium group"
             >
-              How It Works
+              <span>How It Works</span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300" />
             </button>
             <button
               onClick={() => scrollToSection("mentors")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="relative text-foreground hover:text-primary transition-all duration-300 font-medium group"
             >
-              Mentors
+              <span>Mentors</span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300" />
             </button>
             <button
               onClick={() => scrollToSection("pricing")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="relative text-foreground hover:text-primary transition-all duration-300 font-medium group"
             >
-              Pricing
+              <span>Pricing</span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300" />
             </button>
             <button
               onClick={() => scrollToSection("faq")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="relative text-foreground hover:text-primary transition-all duration-300 font-medium group"
             >
-              FAQ
+              <span>FAQ</span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300" />
             </button>
-            <Button variant="hero" size="lg">
-              Apply Now
+            <Button variant="hero" size="lg" className="relative overflow-hidden group">
+              <span className="relative z-10">Apply Now</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-secondary/0 via-secondary/30 to-secondary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
             </Button>
           </div>
 
