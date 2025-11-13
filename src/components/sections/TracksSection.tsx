@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -164,12 +165,15 @@ const TracksSection = () => {
                   <Button 
                     variant="outline" 
                     className="w-full group/btn border-2 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 relative overflow-hidden"
+                    asChild
                   >
-                    <span className="relative z-10 flex items-center justify-center gap-2">
-                      Learn More
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform duration-300" />
-                    </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/10 to-primary/0 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700" />
+                    <Link to={index === 0 ? "/tracks/full-stack" : "/tracks/ai-automation"}>
+                      <span className="relative z-10 flex items-center justify-center gap-2">
+                        Learn More
+                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform duration-300" />
+                      </span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/10 to-primary/0 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700" />
+                    </Link>
                   </Button>
                 </CardContent>
 
