@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Building2, Plus } from "lucide-react";
+import kenaaLogo from "@/assets/kenaa-logo.jpeg";
 
 const PartnersSection = () => {
   const partners = [
@@ -15,6 +16,12 @@ const PartnersSection = () => {
     {
       industry: "Healthcare",
       challenge: "Create AI chatbot for customer support",
+    },
+    {
+      industry: "Manufacturing & Metalworks",
+      name: "Kenaa Industries",
+      challenge: "Design and fabricate custom industrial solutions",
+      logo: kenaaLogo,
     },
   ];
 
@@ -53,16 +60,29 @@ const PartnersSection = () => {
             Partner Companies (Founding Cohort)
           </h3>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {partners.map((partner, index) => (
               <Card
                 key={index}
                 className="p-6 hover-lift animate-fade-in"
                 style={{ animationDelay: `${0.3 + index * 0.1}s` }}
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-lg bg-primary/10">
-                  <Building2 className="w-6 h-6 text-primary" />
-                </div>
+                {partner.logo ? (
+                  <div className="mb-4">
+                    <img 
+                      src={partner.logo} 
+                      alt={partner.name} 
+                      className="w-full h-24 object-contain"
+                    />
+                  </div>
+                ) : (
+                  <div className="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-lg bg-primary/10">
+                    <Building2 className="w-6 h-6 text-primary" />
+                  </div>
+                )}
+                {partner.name && (
+                  <p className="font-bold text-base mb-2">{partner.name}</p>
+                )}
                 <p className="font-medium text-sm text-muted-foreground mb-2">
                   {partner.industry}
                 </p>
