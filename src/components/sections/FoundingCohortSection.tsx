@@ -76,8 +76,10 @@ const FoundingCohortSection = () => {
               But you get unprecedented access, lower prices, and the pride of being first.
             </p>
             <div className="text-center">
-              <Button variant="hero" size="xl" className="group">
-                Apply Now — Limited to 20 Students
+              <Button variant="hero" size="lg" className="group md:size-xl flex flex-col sm:flex-row items-center gap-1 sm:gap-2 h-auto py-3 sm:py-4 px-6 sm:px-10">
+                <span className="font-bold text-base sm:text-lg">Apply Now</span>
+                <span className="hidden sm:inline">—</span>
+                <span className="text-sm sm:text-base opacity-90">Limited to 20 Students</span>
               </Button>
             </div>
           </Card>
