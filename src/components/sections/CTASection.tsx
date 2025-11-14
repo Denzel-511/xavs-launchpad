@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Users, Clock, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CTASection = () => {
   const urgencyPoints = [
@@ -54,13 +55,17 @@ const CTASection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button variant="hero" size="xl" className="group">
-                Apply for Cohort 1
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="outline" size="xl">
-                Schedule a Call
-              </Button>
+              <Link to="/apply">
+                <Button variant="hero" size="xl" className="group">
+                  Apply for Cohort 1
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <a href="mailto:academy@xavslabs.com">
+                <Button variant="outline" size="xl">
+                  Schedule a Call
+                </Button>
+              </a>
             </div>
 
             <p className="text-sm text-muted-foreground pt-4">
