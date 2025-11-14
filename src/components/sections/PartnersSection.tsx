@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Building2, Plus } from "lucide-react";
 import kenaaLogo from "@/assets/kenaa-logo.jpeg";
+import { Link } from "react-router-dom";
 
 const PartnersSection = () => {
   const partners = [
@@ -98,7 +99,9 @@ const PartnersSection = () => {
             <p className="text-muted-foreground mb-6">
               If you're a company with a technical challenge, reach out to collaborate
             </p>
-            <Button variant="outline" className="hover:scale-105 transition-transform">Become a Partner →</Button>
+            <Link to="/become-partner">
+              <Button variant="outline" className="hover:scale-105 transition-transform">Become a Partner →</Button>
+            </Link>
           </Card>
         </div>
       </div>
