@@ -8,20 +8,23 @@ const PartnersSection = () => {
   const partners = [
     {
       industry: "Fintech",
-      challenge: "Automate customer onboarding workflow",
+      name: "TechPay Solutions",
+      description: "Leading mobile money and digital payments platform",
     },
     {
       industry: "E-commerce",
-      challenge: "Build analytics dashboard for sales data",
+      name: "AfriShop",
+      description: "Pan-African online marketplace connecting buyers and sellers",
     },
     {
       industry: "Healthcare",
-      challenge: "Create AI chatbot for customer support",
+      name: "HealthConnect",
+      description: "Digital health platform improving patient care access",
     },
     {
       industry: "Manufacturing & Metalworks",
       name: "Kenaa Industries",
-      challenge: "Design and fabricate custom industrial solutions",
+      description: "Custom industrial fabrication and metalwork solutions",
       logo: kenaaLogo,
     },
   ];
@@ -65,7 +68,7 @@ const PartnersSection = () => {
             {partners.map((partner, index) => (
               <Card
                 key={index}
-                className="p-6 hover-lift animate-fade-in"
+                className="p-6 hover-lift animate-fade-in flex flex-col"
                 style={{ animationDelay: `${0.3 + index * 0.1}s` }}
               >
                 {partner.logo ? (
@@ -81,14 +84,12 @@ const PartnersSection = () => {
                     <Building2 className="w-6 h-6 text-primary" />
                   </div>
                 )}
-                {partner.name && (
-                  <p className="font-bold text-base mb-2">{partner.name}</p>
-                )}
-                <p className="font-medium text-sm text-muted-foreground mb-2">
-                  {partner.industry}
-                </p>
-                <p className="text-sm font-semibold mb-1">Challenge:</p>
-                <p className="text-sm text-muted-foreground">{partner.challenge}</p>
+                <p className="font-bold text-base mb-2">{partner.name}</p>
+                <p className="text-sm text-muted-foreground mb-2">{partner.industry}</p>
+                <p className="text-sm text-muted-foreground mb-4 flex-grow">{partner.description}</p>
+                <Button variant="outline" size="sm" className="w-full mt-auto">
+                  Learn More
+                </Button>
               </Card>
             ))}
           </div>
