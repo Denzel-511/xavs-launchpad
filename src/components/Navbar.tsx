@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { useState } from "react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,7 +29,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             <button
               onClick={() => scrollToSection("tracks")}
               className="relative text-foreground hover:text-primary transition-all duration-300 font-medium group"
@@ -68,15 +69,19 @@ const Navbar = () => {
               <span className="relative z-10">Apply Now</span>
               <div className="absolute inset-0 bg-gradient-to-r from-secondary/0 via-secondary/30 to-secondary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
             </Button>
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-foreground"
-          >
-            <Menu className="w-6 h-6" />
-          </button>
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 text-foreground"
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
