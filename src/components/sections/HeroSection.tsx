@@ -61,7 +61,7 @@ const HeroSection = () => {
             <div className="animate-slide-up">
               <Badge className="bg-primary/10 text-primary border-primary/20 px-4 py-2 hover:bg-primary/20 transition-all duration-300 hover:scale-105 backdrop-blur-sm">
                 <Calendar className="w-4 h-4 mr-2" />
-                <span className="font-semibold">Cohort 1 • 20 Spots Only • January 2026</span>
+                <span className="font-semibold">Cohort 1 • 25 Spots Only • January 2026</span>
               </Badge>
             </div>
 
@@ -131,7 +131,7 @@ const HeroSection = () => {
                 <div className="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Users className="w-4 h-4 text-secondary" />
                 </div>
-                <span className="font-medium">Limited to 20 Students</span>
+                <span className="font-medium">Limited to 25 Students</span>
               </div>
             </div>
           </div>

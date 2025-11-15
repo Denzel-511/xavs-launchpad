@@ -84,7 +84,6 @@ const HowItWorksSection = () => {
           <h3 className="text-2xl font-bold text-center mb-8 animate-fade-in" style={{ animationDelay: "0.5s" }}>Our Learning Model</h3>
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="p-6 text-center hover-lift animate-fade-in" style={{ animationDelay: "0.6s" }}>
-              <div className="text-4xl mb-4 transition-transform hover:scale-125 duration-300">🔨</div>
               <h4 className="font-bold mb-2">70% Building, 30% Learning</h4>
               <p className="text-sm text-muted-foreground">
                 You spend most of your time coding, not watching tutorials
@@ -92,7 +91,6 @@ const HowItWorksSection = () => {
             </Card>
 
             <Card className="p-6 text-center hover-lift animate-fade-in" style={{ animationDelay: "0.7s" }}>
-              <div className="text-4xl mb-4 transition-transform hover:scale-125 duration-300">👥</div>
               <h4 className="font-bold mb-2">Peer Collaboration</h4>
               <p className="text-sm text-muted-foreground">
                 Work in small teams and simulate real-world software teams
@@ -100,7 +98,6 @@ const HowItWorksSection = () => {
             </Card>
 
             <Card className="p-6 text-center hover-lift animate-fade-in" style={{ animationDelay: "0.8s" }}>
-              <div className="text-4xl mb-4 transition-transform hover:scale-125 duration-300">🎯</div>
               <h4 className="font-bold mb-2">Industry-Led Mentorship</h4>
               <p className="text-sm text-muted-foreground">
                 Learn directly from engineers and professionals currently in the field
