@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { MentorContactDialog } from "@/components/MentorContactDialog";
 import mentor1 from "@/assets/mentor-1.jpg";
 import mentor2 from "@/assets/mentor-2.jpg";
 
@@ -76,7 +76,7 @@ const MentorsSection = () => {
             <p className="text-lg text-muted-foreground">
               Additional mentors and guest speakers to be announced
             </p>
-            <Button variant="outline" className="hover:scale-105 transition-transform">Want to mentor? Contact us →</Button>
+            <MentorContactDialog />
           </div>
         </Card>
       </div>
