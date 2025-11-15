@@ -11,7 +11,6 @@ const TracksSection = () => {
       title: "Full-Stack Product Engineering",
       subtitle: "For those who want to build web products end-to-end",
       duration: "8 Weeks",
-      emoji: "💻",
       skills: [
         "React, Node.js, Express",
         "API design & integration",
@@ -32,7 +31,6 @@ const TracksSection = () => {
       title: "AI & Automation Engineering",
       subtitle: "For those who want to use AI to solve real business problems",
       duration: "8 Weeks",
-      emoji: "🤖",
       skills: [
         "Python & FastAPI",
         "AI & OpenAI API integration",
@@ -94,14 +92,11 @@ const TracksSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/3 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <CardHeader className="space-y-4 relative z-10 pt-8">
-                  {/* Icon & Emoji */}
+                  {/* Icon */}
                   <div className="flex items-center justify-between">
                     <div className="relative">
                       <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
                         <track.icon className="w-10 h-10 text-primary" />
-                      </div>
-                      <div className="absolute -top-2 -right-2 text-3xl transform group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">
-                        {track.emoji}
                       </div>
                     </div>
                     <Badge variant="secondary" className="group-hover:scale-110 transition-transform duration-300 shadow-md">

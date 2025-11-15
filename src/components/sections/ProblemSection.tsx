@@ -7,25 +7,21 @@ const ProblemSection = () => {
       icon: TrendingUp,
       value: "70%",
       label: "Companies cite practical skill gaps",
-      emoji: "📊",
     },
     {
       icon: DollarSign,
       value: "₵3-8K",
       label: "Entry-level developer salary/month",
-      emoji: "💰",
     },
     {
       icon: Zap,
       value: "40-60%",
       label: "Higher earnings with AI skills",
-      emoji: "🚀",
     },
     {
       icon: Target,
       value: "8 Weeks",
       label: "To job-ready portfolio",
-      emoji: "⚡",
     },
   ];
 
@@ -105,11 +101,6 @@ const ProblemSection = () => {
                       <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                         <stat.icon className="w-8 h-8 text-primary" />
                       </div>
-                    </div>
-                    
-                    {/* Emoji */}
-                    <div className="text-3xl transform group-hover:scale-125 transition-transform duration-300">
-                      {stat.emoji}
                     </div>
                     
                     {/* Value */}

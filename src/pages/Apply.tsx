@@ -117,7 +117,7 @@ const Apply = () => {
                 Apply to Founding Cohort
               </h1>
               <p className="text-xl text-muted-foreground">
-                Join the first cohort of 20 students starting January 10, 2026
+                Join the first cohort of 25 students starting January 10, 2026
               </p>
             </div>
 

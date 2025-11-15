@@ -47,7 +47,7 @@ const FAQ = () => {
         },
         {
           q: "When do applications close?",
-          a: "January 10, 2026 (or when we reach 20 students).",
+          a: "January 10, 2026 (or when we reach 25 students).",
         },
         {
           q: "Can international students join?",
