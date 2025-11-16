@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Calendar, Users, MapPin, Sparkles, Zap, Target } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-image.jpg";
 import { useEffect, useState } from "react";
 
@@ -102,13 +103,15 @@ const HeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-slide-up" style={{ animationDelay: "0.5s" }}>
-              <Button variant="hero" size="xl" className="group relative overflow-hidden">
-                <span className="relative z-10 flex items-center gap-2">
-                  Apply for January 2026 Cohort
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-secondary/0 via-secondary/20 to-secondary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-              </Button>
+              <Link to="/apply">
+                <Button variant="hero" size="xl" className="group relative overflow-hidden">
+                  <span className="relative z-10 flex items-center gap-2">
+                    Apply for January 2026 Cohort
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                </Button>
+              </Link>
               <Button
                 variant="outline"
                 size="xl"

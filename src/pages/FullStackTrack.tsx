@@ -131,10 +131,12 @@ const FullStackTrack = () => {
             </div>
 
             <div className="flex flex-wrap gap-4 justify-center animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <Button size="xl" className="gap-2 group hover-glow">
-                Apply for January 2026
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-              </Button>
+              <Link to="/apply">
+                <Button size="xl" className="gap-2 group hover-glow">
+                  Apply for January 2026
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                </Button>
+              </Link>
               <Button size="xl" variant="outline" asChild>
                 <Link to="/#pricing">View Pricing</Link>
               </Button>
@@ -311,10 +313,12 @@ const FullStackTrack = () => {
               Join Cohort 1 in January 2026. Only 20 spots available.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="xl" className="gap-2 group hover-glow">
-                Apply Now
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-              </Button>
+              <Link to="/apply">
+                <Button size="xl" className="gap-2 group hover-glow">
+                  Apply Now
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                </Button>
+              </Link>
               <Button size="xl" variant="outline" asChild>
                 <Link to="/contact">Have Questions? Contact Us</Link>
               </Button>

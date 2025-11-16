@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, Clock, Tag } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const PricingSection = () => {
   const pricingTiers = [
@@ -75,13 +76,15 @@ const PricingSection = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button
-                    variant={tier.variant}
-                    size="lg"
-                    className="w-full"
-                  >
-                    Apply Now
-                  </Button>
+                  <Link to="/apply">
+                    <Button
+                      variant={tier.variant}
+                      size="lg"
+                      className="w-full"
+                    >
+                      Apply Now
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
