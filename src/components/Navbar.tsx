@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Navbar = () => {
@@ -65,10 +66,12 @@ const Navbar = () => {
               <span>FAQ</span>
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300" />
             </button>
-            <Button variant="hero" size="lg" className="relative overflow-hidden group">
-              <span className="relative z-10">Apply Now</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-secondary/0 via-secondary/30 to-secondary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-            </Button>
+            <Link to="/apply">
+              <Button variant="hero" size="lg" className="relative overflow-hidden group">
+                <span className="relative z-10">Apply Now</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-secondary/0 via-secondary/30 to-secondary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+              </Button>
+            </Link>
             <ThemeToggle />
           </div>
 
@@ -117,9 +120,11 @@ const Navbar = () => {
             >
               FAQ
             </button>
-            <Button variant="hero" size="lg" className="w-full">
-              Apply Now
-            </Button>
+            <Link to="/apply" className="w-full">
+              <Button variant="hero" size="lg" className="w-full">
+                Apply Now
+              </Button>
+            </Link>
           </div>
         )}
       </div>

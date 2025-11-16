@@ -10,7 +10,7 @@ import Privacy from "./pages/Privacy";
 import Contact from "./pages/Contact";
 import FullStackTrack from "./pages/FullStackTrack";
 import AITrack from "./pages/AITrack";
-import ApplyWithPayment from "./pages/ApplyWithPayment";
+import Apply from "./pages/Apply";
 import BecomePartner from "./pages/BecomePartner";
 import NotFound from "./pages/NotFound";
 
@@ -30,7 +30,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/tracks/full-stack" element={<FullStackTrack />} />
           <Route path="/tracks/ai-automation" element={<AITrack />} />
-          <Route path="/apply" element={<ApplyWithPayment />} />
+          <Route path="/apply" element={<Apply />} />
           <Route path="/become-partner" element={<BecomePartner />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
