@@ -16,10 +16,10 @@ const Footer = () => {
     {
       title: "Programs",
       links: [
-        { text: "Full-Stack Engineering", href: "/#tracks" },
-        { text: "AI & Automation", href: "/#tracks" },
+        { text: "Full-Stack Engineering", href: "/tracks/full-stack" },
+        { text: "AI & Automation", href: "/tracks/ai-automation" },
         { text: "Curriculum Overview", href: "/#how-it-works" },
-        { text: "Demo Day", href: "/#how-it-works" },
+        { text: "Demo Day", href: "/demoday" },
       ],
     },
     {

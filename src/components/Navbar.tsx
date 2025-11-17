@@ -19,6 +19,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
+          <a href="/">
           <div className="flex items-center space-x-3 group cursor-pointer">
             <div className="relative">
               <div className="text-3xl font-bold bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
@@ -28,6 +29,7 @@ const Navbar = () => {
             </div>
             <span className="text-muted-foreground font-medium text-lg">Launchpad</span>
           </div>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
