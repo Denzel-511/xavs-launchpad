@@ -1,4 +1,3 @@
-// app/api/apply/route.ts
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import sgMail from "@sendgrid/mail";
@@ -23,7 +22,7 @@ export async function POST(req: Request) {
 
     const msg = {
       to: data.email,
-      from: process.env.SENDGRID_FROM!,
+      from: "zoubjd19@gmail.com",
       subject: `Launchera Application: ${data.fullName} (${data.track})`,
       text: `
 Full name: ${data.fullName}
@@ -39,21 +38,33 @@ ${data.motivation}
 
 LinkedIn: ${data.linkedin || "N/A"}
 GitHub: ${data.github || "N/A"}
-      `,
-      html: `<h2>New Application</h2>
-<ul>
-  <li><strong>Name:</strong> ${data.fullName}</li>
-  <li><strong>Email:</strong> ${data.email}</li>
-  <li><strong>Phone:</strong> ${data.phone}</li>
-  <li><strong>Track:</strong> ${data.track}</li>
-</ul>
-<h3>Experience</h3><p>${data.experience}</p>
-<h3>Motivation</h3><p>${data.motivation}</p>
-<p>LinkedIn: ${data.linkedin || "N/A"}</p>
-<p>GitHub: ${data.github || "N/A"}</p>`,
+      `
     };
 
     await sgMail.send(msg);
+
+    const adminMsg = {
+      to: "zoubjd19@gmail.com",
+      from: "zoubjd19@gmail.com",
+      subject: `New Launchera Application: ${data.fullName} (${data.track})`,
+      text: `
+Full name: ${data.fullName}
+Email: ${data.email}
+Phone: ${data.phone}
+Track: ${data.track}
+
+Experience:
+${data.experience}
+
+Motivation:
+${data.motivation}
+
+LinkedIn: ${data.linkedin || "N/A"}
+GitHub: ${data.github || "N/A"}
+      `
+    };
+
+    await sgMail.send(adminMsg);
 
     return NextResponse.json({ ok: true, message: "Email sent" }, { status: 200 });
   } catch (err) {

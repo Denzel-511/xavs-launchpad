@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Launchera",
   description: "Learn by building",
+  icons: {
+    icon: '/image.png', // to add a new pic that'll go well
+  },
 };
 
 export default function RootLayout({

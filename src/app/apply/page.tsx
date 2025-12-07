@@ -25,7 +25,7 @@ const applicationSchema = z.object({
   github: z.string().trim().url("Invalid GitHub URL").optional().or(z.literal("")),
 });
 
-type Step = "application" | "payment";
+type Step = "application";
 
 const ApplyWithPayment = () => {
   const router = useRouter();
@@ -58,7 +58,32 @@ const ApplyWithPayment = () => {
 
     try {
       applicationSchema.parse(formData);
-      setStep("payment");
+
+      // Send to API
+  const res = await fetch("/api/apply", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(formData),
+  });
+
+  const result = await res.json();
+
+  if (!res.ok) {
+    toast({
+      title: "Submission Failed",
+      description: result.message || "Could not send application.",
+      variant: "destructive",
+    });
+    return;
+  }
+
+  toast({
+    title: "Application Submitted!",
+    description: "We'll review your application and email you soon.",
+  });
+
+  
+  setTimeout(() => router.push("/"), 2000);
     } catch (error) {
       if (error instanceof z.ZodError) {
         const fieldErrors: Record<string, string> = {};
@@ -79,13 +104,6 @@ const ApplyWithPayment = () => {
     }
   };
 
-  const handlePaymentComplete = () => {
-    toast({
-      title: "Application Submitted!",
-      description: "We'll review your application and get back to you within 48 hours.",
-    });
-    setTimeout(() => router.push('/'), 2000);
-  };
 
   const pricingOption = formData.track === "full-stack" ? "Early Bird" : "Early Bird";
   const price = "₵1,000";
@@ -97,11 +115,11 @@ const ApplyWithPayment = () => {
       <main className="container mx-auto px-4 py-12 max-w-3xl">
         <Button
           variant="ghost"
-          onClick={() => step === "payment" ? setStep("application") : router.push("/")}
+          onClick={() => router.push("/")}
           className="mb-6"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
-          {step === "payment" ? "Back to Application" : "Back to Home"}
+          {"Back to Home"}
         </Button>
 
         {/* Progress Steps */}
@@ -110,22 +128,12 @@ const ApplyWithPayment = () => {
             <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
               step === "application" ? "bg-primary text-primary-foreground" : "bg-primary/20 text-primary"
             }`}>
-              {step === "payment" ? <Check className="w-5 h-5" /> : "1"}
+              {step === "application" ? <Check className="w-4 h-4" /> : "1"}
             </div>
             <span className="font-medium">Application</span>
           </div>
-          <div className="w-16 h-0.5 bg-border" />
-          <div className="flex items-center gap-2">
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
-              step === "payment" ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
-            }`}>
-              2
-            </div>
-            <span className={step === "payment" ? "font-medium" : "text-muted-foreground"}>Payment</span>
-          </div>
         </div>
 
-        {step === "application" ? (
           <Card className="p-8">
             <div className="text-center mb-8">
               <h1 className="text-4xl font-bold mb-4">Apply for Cohort 1</h1>
@@ -238,86 +246,11 @@ const ApplyWithPayment = () => {
               </div>
 
               <Button type="submit" disabled={isSubmitting} className="w-full" size="lg">
-                {isSubmitting ? "Validating..." : "Continue to Payment"}
+                {isSubmitting ? "Validating..." : "Validate Application"}
               </Button>
             </form>
           </Card>
-        ) : (
-          <Card className="p-8">
-            <div className="text-center mb-8">
-              <h1 className="text-4xl font-bold mb-4">Complete Your Payment</h1>
-              <p className="text-muted-foreground">
-                Secure your spot in Cohort 1
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              <Card className="p-6 bg-muted/30">
-                <h3 className="font-bold mb-4">Order Summary</h3>
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Program Fee ({pricingOption})</span>
-                    <span className="font-semibold">{price}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Selected Track</span>
-                    <span className="font-semibold">
-                      {formData.track === "full-stack" ? "Full-Stack Development" : "AI & Automation"}
-                    </span>
-                  </div>
-                  <div className="pt-3 border-t flex justify-between text-lg">
-                    <span className="font-bold">Total</span>
-                    <span className="font-bold text-primary">{price}</span>
-                  </div>
-                </div>
-              </Card>
-
-              <div className="space-y-4">
-                <h3 className="font-bold">Payment Methods</h3>
-                <div className="space-y-3">
-                  <Button 
-                    variant="outline" 
-                    className="w-full h-auto p-4 justify-start"
-                    onClick={handlePaymentComplete}
-                  >
-                    <div className="text-left">
-                      <div className="font-semibold">Mobile Money</div>
-                      <div className="text-sm text-muted-foreground">Pay with MTN, Vodafone, or AirtelTigo</div>
-                    </div>
-                  </Button>
-                  
-                  <Button 
-                    variant="outline" 
-                    className="w-full h-auto p-4 justify-start"
-                    onClick={handlePaymentComplete}
-                  >
-                    <div className="text-left">
-                      <div className="font-semibold">Card Payment</div>
-                      <div className="text-sm text-muted-foreground">Pay with Visa, Mastercard, or Verve</div>
-                    </div>
-                  </Button>
-
-                  <Button 
-                    variant="outline" 
-                    className="w-full h-auto p-4 justify-start"
-                    onClick={handlePaymentComplete}
-                  >
-                    <div className="text-left">
-                      <div className="font-semibold">Bank Transfer</div>
-                      <div className="text-sm text-muted-foreground">Direct bank transfer</div>
-                    </div>
-                  </Button>
-                </div>
-              </div>
-
-              <Card className="p-4 bg-primary/5 border-primary/20">
-                <p className="text-sm text-muted-foreground">
-                  <span className="font-semibold">Payment Plan Available:</span> Pay ₵500 upfront, then ₵500 by Week 4
-                </p>
-              </Card>
-            </div>
-          </Card>
-        )}
+        
       </main>
       
       <Footer />
