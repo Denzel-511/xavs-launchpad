@@ -11,8 +11,9 @@ const applicationSchema = z.object({
   track: z.enum(["full-stack", "ai-automation"]),
   experience: z.string().min(10),
   motivation: z.string().min(10),
-  linkedin: z.string().optional().or(z.literal("")),
-  github: z.string().optional().or(z.literal("")),
+  linkedin: z.string().url().optional().or(z.literal("")),
+  github: z.string().url().optional().or(z.literal("")),
+
 });
 
 export async function POST(req: Request) {
@@ -69,7 +70,7 @@ GitHub: ${data.github || "N/A"}
     return NextResponse.json({ ok: true, message: "Email sent" }, { status: 200 });
   } catch (err) {
     if (err instanceof z.ZodError) {
-      return NextResponse.json({ ok: false, errors: err.errors }, { status: 422 });
+      return NextResponse.json({ ok: false, errors: err.issues }, { status: 422 });
     }
     console.error("SendGrid /apply error:", err);
     return NextResponse.json({ ok: false, message: "Internal server error" }, { status: 500 });
