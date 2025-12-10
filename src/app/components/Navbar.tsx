@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,15 +21,15 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link href="/">
-          <div className="flex items-center space-x-3 group cursor-pointer">
-            <div className="relative">
-              <div className="text-3xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
-                XAVS
-              </div>
-              <div className="absolute -inset-2 bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
+            <div className="flex items-center group cursor-pointer">
+              <Image
+                src="/launchra-logo.jpeg"
+                alt="Launchra"
+                width={180}
+                height={50}
+                className="h-10 w-auto object-contain"
+              />
             </div>
-            <span className="text-muted-foreground font-medium text-lg tracking-wide">Launchra</span>
-          </div>
           </Link>
 
           {/* Desktop Navigation */}
