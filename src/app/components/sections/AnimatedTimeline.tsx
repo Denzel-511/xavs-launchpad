@@ -3,6 +3,8 @@ import { useRef } from "react";
 import { Card } from "@/components/ui/card";
 import { Layers, Code, Rocket, Trophy, LucideIcon } from "lucide-react";
 import { useScrollProgress } from "@/hooks/useScrollProgress";
+import type { RefObject } from "react";
+
 
 interface TimelinePhase {
   icon: LucideIcon;
@@ -45,7 +47,7 @@ const timeline: TimelinePhase[] = [
 
 export function AnimatedTimeline() {
   const timelineRef = useRef<HTMLDivElement>(null);
-  const progress = useScrollProgress(timelineRef);
+  const progress = useScrollProgress(timelineRef as RefObject<HTMLElement>);
 
   return (
     <div ref={timelineRef} className="max-w-4xl mx-auto">

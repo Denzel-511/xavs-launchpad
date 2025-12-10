@@ -18,7 +18,7 @@ const applicationSchema = z.object({
   fullName: z.string().trim().min(2, "Name must be at least 2 characters").max(100),
   email: z.string().trim().email("Invalid email address").max(255),
   phone: z.string().trim().min(10, "Phone number must be at least 10 digits").max(20),
-  track: z.enum(["full-stack", "ai-automation"], { required_error: "Please select a track" }),
+  track: z.string().refine(v => ["full-stack", "ai-automation"].includes(v), {message: "Please select a track",}),
   experience: z.string().trim().min(50, "Please provide at least 50 characters").max(1000),
   motivation: z.string().trim().min(50, "Please provide at least 50 characters").max(1000),
   linkedin: z.string().trim().url("Invalid LinkedIn URL").optional().or(z.literal("")),
@@ -87,7 +87,7 @@ const ApplyWithPayment = () => {
     } catch (error) {
       if (error instanceof z.ZodError) {
         const fieldErrors: Record<string, string> = {};
-        error.errors.forEach((err) => {
+        error.issues.forEach((err) => {
           if (err.path[0]) {
             fieldErrors[err.path[0] as string] = err.message;
           }
