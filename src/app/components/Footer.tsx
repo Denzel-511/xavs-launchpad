@@ -2,7 +2,6 @@ import { Separator } from "@/components/ui/separator";
 import { Linkedin, Twitter, Instagram, Github, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 
-
 const Footer = () => {
   const footerSections = [
     {
@@ -51,29 +50,32 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-muted/30 border-t border-border">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+    <footer className="bg-muted/10 border-t border-border/30 relative overflow-hidden">
+      {/* Subtle glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-primary/5 rounded-full blur-[100px]" />
+      
+      <div className="container mx-auto px-4 py-16 relative z-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+              <div className="text-2xl font-bold text-gradient">
                 XAVS
               </div>
               <span className="text-muted-foreground">Launchpad</span>
             </div>
-            <p className="text-sm text-muted-foreground mb-4">
+            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
               Building Africa&apos;s next generation of tech creators, one project at a time.
             </p>
-            <div className="space-y-2 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4" />
-                <a href="mailto:academy@xavslabs.com" className="hover:text-primary transition-colors">
-                  academy@xavslabs.com
+            <div className="space-y-3 text-sm text-muted-foreground">
+              <div className="flex items-center gap-3 group">
+                <Mail className="w-4 h-4 text-primary" />
+                <a href="mailto:xavsacademy@gmail.com" className="hover:text-primary transition-colors duration-300">
+                  xavsacademy@gmail.com
                 </a>
               </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" />
+              <div className="flex items-center gap-3">
+                <MapPin className="w-4 h-4 text-primary" />
                 <span>Accra, Ghana</span>
               </div>
             </div>
@@ -82,21 +84,21 @@ const Footer = () => {
           {/* Link Columns */}
           {footerSections.map((section, index) => (
             <div key={index}>
-              <h4 className="font-semibold mb-4">{section.title}</h4>
-              <ul className="space-y-2">
+              <h4 className="font-semibold mb-5 text-foreground">{section.title}</h4>
+              <ul className="space-y-3">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     {link.href.startsWith('/') ? (
                       <Link
                         href={link.href}
-                        className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                        className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
                       >
                         {link.text}
                       </Link>
                     ) : (
                       <a
                         href={link.href}
-                        className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                        className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
                       >
                         {link.text}
                       </a>
@@ -108,33 +110,30 @@ const Footer = () => {
           ))}
         </div>
 
-        <Separator className="my-8" />
+        <Separator className="my-10 bg-border/30" />
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          {/* Copyright */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-sm text-muted-foreground text-center md:text-left">
             © 2025 XAVS Labs. All rights reserved.
           </p>
 
-          {/* Social Links */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             {socialLinks.map((social, index) => (
               <a
                 key={index}
                 href={social.href}
                 aria-label={social.label}
-                className="w-9 h-9 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-all duration-300 flex items-center justify-center"
+                className="w-10 h-10 rounded-xl bg-muted/50 border border-border/30 hover:bg-primary/10 hover:border-primary/30 hover:text-primary transition-all duration-300 flex items-center justify-center group"
               >
-                <social.icon className="w-4 h-4" />
+                <social.icon className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
               </a>
             ))}
           </div>
         </div>
 
-        <Separator className="my-8" />
+        <Separator className="my-10 bg-border/30" />
 
-        {/* Disclaimer */}
-        <p className="text-xs text-muted-foreground text-center max-w-4xl mx-auto">
+        <p className="text-xs text-muted-foreground text-center max-w-4xl mx-auto leading-relaxed">
           XAVS Launchpad is a professional training initiative powered by XAVS Labs, a registered 
           business in Ghana. We are not a degree-granting institution. Certificates issued recognize 
           professional skills training completion, not academic qualifications.

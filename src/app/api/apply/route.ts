@@ -23,7 +23,7 @@ export async function POST(req: Request) {
 
     const msg = {
       to: data.email,
-      from: "zoubjd19@gmail.com",
+      from: "xavsacademy@gmail.com",
       subject: `Launchera Application: ${data.fullName} (${data.track})`,
       text: `
 Full name: ${data.fullName}
@@ -45,8 +45,8 @@ GitHub: ${data.github || "N/A"}
     await sgMail.send(msg);
 
     const adminMsg = {
-      to: "zoubjd19@gmail.com",
-      from: "zoubjd19@gmail.com",
+      to: "xavsacademy@gmail.com",
+      from: "xavsacademy@gmail.com",
       subject: `New Launchera Application: ${data.fullName} (${data.track})`,
       text: `
 Full name: ${data.fullName}
