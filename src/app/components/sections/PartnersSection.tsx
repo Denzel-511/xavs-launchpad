@@ -1,7 +1,9 @@
+"use client";
+
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Building2, Plus } from "lucide-react";
-import Link  from "next/link";
+import { Building2, Plus, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import Image from 'next/image';
 
 const PartnersSection = () => {
@@ -11,11 +13,6 @@ const PartnersSection = () => {
       name: "Sua Pa AI",
       description: "Ghana's first AI-powered educational assistant",
       logo: "/suapalogo.png",
-    },
-    {
-      industry: "E-commerce",
-      name: "AfriShop",
-      description: "Pan-African online marketplace connecting buyers and sellers",
     },
     {
       industry: "Adventure Travel",
@@ -29,84 +26,118 @@ const PartnersSection = () => {
       description: "Custom industrial fabrication and metalwork solutions",
       logo: "/kenaa-logo.jpeg",
     },
+    {
+      industry: "Wellness & Lifestyle",
+      name: "Lyf Arena",
+      description: "Holistic wellness and lifestyle development platform",
+      logo: "/lyf-arena.jpeg",
+    },
+    {
+      industry: "Business Consulting",
+      name: "Strategic Plus",
+      description: "Strategic business consulting and growth solutions",
+      logo: "/strategic-plus.jpeg",
+    },
   ];
 
   return (
-    <section id="partners" className="py-16 md:py-24 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Build Solutions for Real Companies
+    <section id="partners" className="py-20 md:py-32 relative overflow-hidden">
+      {/* Premium Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16 animate-fade-in">
+            <div className="inline-block px-4 py-2 bg-primary/10 rounded-full border border-primary/20 backdrop-blur-sm mb-6">
+              <span className="text-primary font-semibold text-sm tracking-wide">Industry Partners</span>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              Build Solutions for{" "}
+              <span className="text-gradient">Real Companies</span>
             </h2>
-            <p className="text-xl text-muted-foreground">
-              During Week 6-8, you&apos;ll work on actual challenges from partner companies. 
-              These aren&apos;t hypothetical projects — they&apos;re real problems that businesses need solved.
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              During Week 6-8, you'll work on actual challenges from partner companies. 
+              These aren't hypothetical projects — they're real problems that businesses need solved.
             </p>
           </div>
 
-          <Card className="p-8 mb-12 bg-gradient-to-br from-primary/5 to-secondary/5 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            <h3 className="text-xl font-bold mb-4">This Means:</h3>
-            <ul className="space-y-3">
+          {/* Benefits Card */}
+          <Card className="p-8 mb-16 glass-card hover-glow-subtle animate-fade-in border-gradient" style={{ animationDelay: "0.1s" }}>
+            <h3 className="text-xl font-bold mb-6 text-primary">This Means:</h3>
+            <div className="grid md:grid-cols-2 gap-4">
               {[
                 "Your portfolio includes genuine business impact",
                 "You get exposure to potential employers",
                 "Companies see your work firsthand on Demo Day",
                 "Your solution might get implemented (and you might get hired)",
               ].map((item, idx) => (
-                <li key={idx} className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0" />
-                  <span className="text-muted-foreground">{item}</span>
-                </li>
+                <div key={idx} className="flex items-start gap-4 group">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2.5 shrink-0 group-hover:scale-150 transition-transform duration-300" />
+                  <span className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">{item}</span>
+                </div>
               ))}
-            </ul>
+            </div>
           </Card>
 
-          <h3 className="text-2xl font-bold text-center mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            Partner Companies (Founding Cohort)
+          {/* Partners Header */}
+          <h3 className="text-2xl md:text-3xl font-bold text-center mb-12 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            Partner Companies <span className="text-primary">(Founding Cohort)</span>
           </h3>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          {/* Partners Grid */}
+          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6 mb-16">
             {partners.map((partner, index) => (
               <Card
                 key={index}
-                className="p-6 hover-lift animate-fade-in flex flex-col"
+                className="group p-6 hover-lift glass-card flex flex-col items-center text-center animate-fade-in"
                 style={{ animationDelay: `${0.3 + index * 0.1}s` }}
               >
-                {partner.logo ? (
-                  <div className="mb-4">
-                    
-                  <Image
-                    src={partner.logo} // must be a string or imported static file
-                    alt={partner.name}
-                    width={200}        // or any width you want
-                    height={96}        // match your h-24 roughly (24*4=96px)
-                    className="object-contain w-full"
-                  />
-                  </div>
-                ) : (
-                  <div className="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-lg bg-primary/10">
-                    <Building2 className="w-6 h-6 text-primary" />
-                  </div>
-                )}
-                <p className="font-bold text-base mb-2">{partner.name}</p>
-                <p className="text-sm text-muted-foreground mb-2">{partner.industry}</p>
-                <p className="text-sm text-muted-foreground mb-4 flex-grow">{partner.description}</p>
-                <Button variant="outline" size="sm" className="w-full mt-auto">
+                <div className="relative mb-4 w-full h-24 flex items-center justify-center overflow-hidden rounded-lg bg-white/5">
+                  {partner.logo ? (
+                    <Image
+                      src={partner.logo}
+                      alt={partner.name}
+                      width={120}
+                      height={80}
+                      className="object-contain max-h-20 transition-transform duration-500 group-hover:scale-110"
+                    />
+                  ) : (
+                    <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                      <Building2 className="w-8 h-8 text-primary" />
+                    </div>
+                  )}
+                </div>
+                <p className="font-bold text-base mb-1 group-hover:text-primary transition-colors duration-300">{partner.name}</p>
+                <p className="text-xs text-primary/70 mb-2 font-medium">{partner.industry}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed flex-grow">{partner.description}</p>
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="mt-4 opacity-0 group-hover:opacity-100 transition-all duration-300 text-primary hover:text-primary hover:bg-primary/10"
+                >
                   Learn More
+                  <ArrowUpRight className="w-4 h-4 ml-1" />
                 </Button>
               </Card>
             ))}
           </div>
 
-          <Card className="p-8 text-center bg-gradient-to-br from-secondary/10 to-primary/10 animate-fade-in" style={{ animationDelay: "0.6s" }}>
-            <Plus className="w-12 h-12 text-muted-foreground mx-auto mb-4 transition-transform hover:rotate-90 duration-300" />
-            <h4 className="text-xl font-bold mb-2">More Partners Announced Soon</h4>
-            <p className="text-muted-foreground mb-6">
-              If you&apos;re a company with a technical challenge, reach out to collaborate
+          {/* Become Partner CTA */}
+          <Card className="p-10 text-center glass-card hover-glow animate-fade-in border-gradient" style={{ animationDelay: "0.8s" }}>
+            <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-primary/10 flex items-center justify-center group hover:bg-primary/20 transition-colors duration-300">
+              <Plus className="w-8 h-8 text-primary transition-transform duration-500 group-hover:rotate-90" />
+            </div>
+            <h4 className="text-2xl font-bold mb-3">More Partners Announced Soon</h4>
+            <p className="text-muted-foreground mb-8 max-w-md mx-auto">
+              If you're a company with a technical challenge, reach out to collaborate with our talented cohort
             </p>
             <Link href="/become-partner">
-              <Button variant="outline" className="hover:scale-105 transition-transform">Become a Partner →</Button>
+              <Button variant="hero" size="lg" className="group">
+                Become a Partner
+                <ArrowUpRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </Button>
             </Link>
           </Card>
         </div>
