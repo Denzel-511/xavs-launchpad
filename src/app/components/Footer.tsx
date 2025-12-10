@@ -1,11 +1,12 @@
 import { Separator } from "@/components/ui/separator";
 import { Linkedin, Twitter, Instagram, Github, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   const footerSections = [
     {
-      title: "XAVS Launchpad",
+      title: "Launchra",
       links: [
         { text: "About Us", href: "/#problem" },
         { text: "Our Story", href: "/#problem" },
@@ -58,11 +59,14 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="text-2xl font-bold text-gradient">
-                XAVS
-              </div>
-              <span className="text-muted-foreground">Launchpad</span>
+            <div className="mb-4">
+              <Image
+                src="/launchra-logo.jpeg"
+                alt="Launchra"
+                width={160}
+                height={45}
+                className="h-10 w-auto object-contain"
+              />
             </div>
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
               Building Africa&apos;s next generation of tech creators, one project at a time.
@@ -70,8 +74,8 @@ const Footer = () => {
             <div className="space-y-3 text-sm text-muted-foreground">
               <div className="flex items-center gap-3 group">
                 <Mail className="w-4 h-4 text-primary" />
-                <a href="mailto:xavsacademy@gmail.com" className="hover:text-primary transition-colors duration-300">
-                  xavsacademy@gmail.com
+                <a href="mailto:joinlaunchra@xavslabs.com" className="hover:text-primary transition-colors duration-300">
+                  joinlaunchra@xavslabs.com
                 </a>
               </div>
               <div className="flex items-center gap-3">
@@ -134,7 +138,7 @@ const Footer = () => {
         <Separator className="my-10 bg-border/30" />
 
         <p className="text-xs text-muted-foreground text-center max-w-4xl mx-auto leading-relaxed">
-          XAVS Launchpad is a professional training initiative powered by XAVS Labs, a registered 
+          Launchra is a professional training initiative powered by XAVS Labs, a registered 
           business in Ghana. We are not a degree-granting institution. Certificates issued recognize 
           professional skills training completion, not academic qualifications.
         </p>
