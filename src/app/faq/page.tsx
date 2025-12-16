@@ -17,11 +17,11 @@ const FAQ = () => {
       category: "About the Program",
       questions: [
         {
-          q: "What is XAVS Launchpad?",
+          q: "What is Launchra?",
           a: "An 8-week intensive professional development program teaching practical tech skills through project-based learning.",
         },
         {
-          q: "Who runs XAVS Launchpad?",
+          q: "Who runs Launchra?",
           a: "XAVS Labs, a registered company in Ghana focused on tech training and consultancy.",
         },
         {

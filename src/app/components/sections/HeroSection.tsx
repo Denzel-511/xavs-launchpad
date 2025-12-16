@@ -40,13 +40,17 @@ const HeroSection = () => {
   };
 
   return (
-    <section ref={sectionRef} className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden min-h-screen flex items-center noise-overlay">
-      {/* Premium Dark Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/20" />
+    <section ref={sectionRef} className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden min-h-screen flex items-center">
+      {/* Premium Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/hero-bg.jpeg')" }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-background/80" />
       
       {/* Animated Gradient Orbs */}
       <motion.div 
-        className="absolute top-10 left-5 w-[500px] h-[500px] rounded-full blur-[100px] opacity-40"
+        className="absolute top-10 left-5 w-[500px] h-[500px] rounded-full blur-[100px] opacity-30"
         style={{ 
           background: 'radial-gradient(circle, hsl(155 70% 45% / 0.3), transparent 70%)',
           x: mousePosition.x,
@@ -62,7 +66,7 @@ const HeroSection = () => {
         }}
       />
       <motion.div 
-        className="absolute bottom-10 right-5 w-[600px] h-[600px] rounded-full blur-[120px] opacity-30"
+        className="absolute bottom-10 right-5 w-[600px] h-[600px] rounded-full blur-[120px] opacity-20"
         style={{ 
           background: 'radial-gradient(circle, hsl(155 60% 35% / 0.4), transparent 70%)',
           x: -mousePosition.x,
@@ -77,9 +81,6 @@ const HeroSection = () => {
           ease: "easeInOut"
         }}
       />
-      
-      {/* Premium Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--primary)/0.03)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--primary)/0.03)_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_0%,#000_70%,transparent_110%)]" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -122,8 +123,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Join Launchra — an 8-week hybrid program by XAVS Labs where you{" "}
-              <span className="text-foreground font-semibold">learn by building</span>, not by watching.
+              Join our <span className="text-foreground font-semibold">community of builders</span> — an 8-week hybrid program where you learn by building real products, not watching tutorials.
             </motion.p>
 
             <motion.div 

@@ -35,14 +35,14 @@ const Terms = () => {
               <section>
                 <h2 className="text-2xl font-bold mb-4">1. Acceptance of Terms</h2>
                 <p className="text-muted-foreground">
-                  By enrolling in XAVS Launchpad, you agree to these terms and conditions.
+                  By enrolling in Launchra, you agree to these terms and conditions.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold mb-4">2. Program Description</h2>
                 <p className="text-muted-foreground">
-                  XAVS Launchpad is an 8-week professional development program by XAVS Labs. It focuses on project-based learning, mentorship, and portfolio building. This is not an academic degree or diploma program.
+                  Launchra is an 8-week professional development program by XAVS Labs. It focuses on project-based learning, mentorship, and portfolio building. This is not an academic degree or diploma program.
                 </p>
               </section>
 

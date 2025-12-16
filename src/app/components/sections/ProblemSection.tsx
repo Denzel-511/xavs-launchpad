@@ -67,7 +67,7 @@ const ProblemSection = () => {
               <div className="relative flex justify-center">
                 <div className="bg-background px-8 py-4 rounded-2xl border-2 border-primary/30 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-default">
                   <span className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-destructive via-primary to-secondary bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
-                    We created XAVS Launchpad to fix that
+                    We created Launchra to fix that
                   </span>
                   <div className="absolute -top-2 -right-2 w-4 h-4 bg-primary rounded-full animate-pulse-slow" />
                   <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-secondary rounded-full animate-pulse-slow" style={{ animationDelay: "1s" }} />
