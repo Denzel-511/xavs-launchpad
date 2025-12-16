@@ -79,7 +79,7 @@ export default function DemoDay() {
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-white dark:from-slate-900 dark:to-slate-950">
         <div className="mx-auto text-center">
           <h1 className="text-5xl sm:text-6xl font-bold mt-10 mb-12 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-            Launchpad Demo Day Cohort 1
+            Launchra Demo Day Cohort 1
           </h1>
           <p className="text-2xl font-semibold text-slate-700 dark:text-slate-300 mb-8">
             Real Projects. Real Companies. Real Talent.
@@ -148,7 +148,7 @@ export default function DemoDay() {
                 Where Learning Meets the <span className="text-primary">Real World</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Launchpad Demo Day is a curated presentation of solutions built by student teams for real Ghanaian businesses. We bridge the gap between academic theory and industry reality.
+                Launchra Demo Day is a curated presentation of solutions built by student teams for real Ghanaian businesses. We bridge the gap between academic theory and industry reality.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-6">
@@ -412,7 +412,7 @@ export default function DemoDay() {
                 "Interact with teams that actually build, not just study",
                 "Spot potential hires in action during live demos",
                 "Explore partnership opportunities for your own business challenges",
-                "See the capabilities of Launchpad Academy firsthand",
+                "See the capabilities of Launchra firsthand",
                 "Network with founders + industry operators"
               ].map((benefit, idx) => (
                 <div key={idx} className="p-4 bg-muted/50 hover:bg-primary/10 border border-border/50 hover:border-primary/30 rounded-lg transition-colors cursor-default group flex gap-2">

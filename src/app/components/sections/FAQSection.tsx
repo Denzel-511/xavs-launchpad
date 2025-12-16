@@ -10,7 +10,7 @@ const FAQSection = () => {
     {
       question: "Is this program accredited?",
       answer:
-        "Not yet — XAVS Launchpad is a professional development initiative by XAVS Labs. We focus on practical skills and portfolio outcomes, not formal academic certification.",
+        "Launchra is a professional development initiative by XAVS Labs. We focus on practical skills and portfolio outcomes, not formal academic certification.",
     },
     {
       question: "Do I need a tech background?",
@@ -67,7 +67,7 @@ const FAQSection = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-xl text-muted-foreground">
-            Everything you need to know about XAVS Launchpad
+            Everything you need to know about Launchra
           </p>
         </div>
 

@@ -65,7 +65,7 @@ const Contact = () => {
                 Let's Talk
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Have questions about XAVS Launchpad? Want to partner with us? We'd love to hear from you.
+                Have questions about Launchra? Want to partner with us? We'd love to hear from you.
               </p>
             </div>
 

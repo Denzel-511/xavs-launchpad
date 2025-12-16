@@ -1,5 +1,5 @@
 import { Separator } from "@/components/ui/separator";
-import { Linkedin, Twitter, Instagram, Github, Mail, MapPin } from "lucide-react";
+import { Linkedin, Twitter, Instagram, Github, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -11,7 +11,7 @@ const Footer = () => {
         { text: "About Us", href: "/#problem" },
         { text: "Our Story", href: "/#problem" },
         { text: "Contact Us", href: "/contact" },
-        { text: "Blog (coming soon)", href: "#" },
+        { text: "Join the Community", href: "https://www.instagram.com/buildwithlaunchra?igsh=MWw4ODVlcWQ3cnJ2eg%3D%3D&utm_source=qr" },
       ],
     },
     {
@@ -44,9 +44,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
+    { icon: Instagram, href: "https://www.instagram.com/buildwithlaunchra?igsh=MWw4ODVlcWQ3cnJ2eg%3D%3D&utm_source=qr", label: "Instagram" },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
     { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
     { icon: Github, href: "#", label: "GitHub" },
   ];
 
@@ -69,13 +69,19 @@ const Footer = () => {
               />
             </div>
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-              Building Africa&apos;s next generation of tech creators, one project at a time.
+              A community of builders creating real impact — join us and grow together.
             </p>
             <div className="space-y-3 text-sm text-muted-foreground">
               <div className="flex items-center gap-3 group">
                 <Mail className="w-4 h-4 text-primary" />
                 <a href="mailto:joinlaunchra@xavslabs.com" className="hover:text-primary transition-colors duration-300">
                   joinlaunchra@xavslabs.com
+                </a>
+              </div>
+              <div className="flex items-center gap-3 group">
+                <Phone className="w-4 h-4 text-primary" />
+                <a href="https://wa.me/233543951760" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors duration-300">
+                  +233 543 951 760
                 </a>
               </div>
               <div className="flex items-center gap-3">
